@@ -1,0 +1,68 @@
+GET localhost:5000/books/1
+
+###
+GET localhost:5000/books
+
+###
+PUT localhost:5000/books/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODI4OCwicm9sZSI6ImFkbWluIn0.c90W0-3Po4WLlFQE8aQCFyrsmap-ZYmij2iODR6wfvc
+Content-Type: application/json
+
+{
+  "author": "余华",
+  "borrow_times": 121,
+  "category": "小说",
+  "img": "cover_image.jpg",
+  "info": "cn",
+  "isbn": "9787508654994",
+  "name": "活着",
+  "pages": 208,
+  "price": 39.8,
+  "publish_time": "2012-09-01",
+  "want": 0
+}
+###
+
+DELETE localhost:5000/books/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODI4OCwicm9sZSI6ImFkbWluIn0.c90W0-3Po4WLlFQE8aQCFyrsmap-ZYmij2iODR6wfvc
+
+###
+POST localhost:5000/books
+Content-Type: application/json
+
+{
+  "author": "余华",
+  "borrow_times": 121,
+  "category": "小说",
+  "img": "cover_image.jpg",
+  "info": "cn",
+  "isbn": "9787508654994",
+  "name": "活着",
+  "pages": 208,
+  "price": 39.8,
+  "publish_time": "2012-09-01",
+  "want": 0
+}
+
+###
+PUT localhost:5000/books/1
+Content-Type: application/json
+
+{
+"author": "余华",
+"borrow_times": 121,
+"category": "小说",
+"id": 1,
+"img": "cover_image.jpg",
+"ifo": "cn",
+"isbn": "9787508654799",
+"name": "活着",
+"pages": 208,
+"price": 39.8,
+"publish_time": "2012-09-01",
+"want": 0
+}
+
+###
+POST localhost:5000/books/1/hidden
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODI4OCwicm9sZSI6ImFkbWluIn0.c90W0-3Po4WLlFQE8aQCFyrsmap-ZYmij2iODR6wfvc

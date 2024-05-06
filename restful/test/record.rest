@@ -1,0 +1,38 @@
+GET localhost:5000/records
+###
+GET localhost:5000/records/book_id/3
+###
+GET localhost:5000/records/user_id/8209
+###
+GET localhost:5000/records/item_id/201
+###
+POST localhost:5000/records
+Content-Type: application/json
+
+{
+  "book_id": 1,
+  "book_name": "活着",
+  "borrow_time": "2024-04-29 20:24:36",
+  "isbn": "9787508654799",
+  "item_id": 101,
+  "return_time": null,
+  "user_id": 8209
+}
+###
+DELETE localhost:5000/records/id/20
+###
+PUT localhost:5000/records/id/25
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "book_name": "活着",
+    "borrow_time": "2024-04-30 15:01:59",
+    "id": 25,
+    "isbn": "9787508654799",
+    "item_id": 101,
+    "return_time": null,
+    "user_id": 8209
+}
+###
+GET localhost:5000/records/id/20

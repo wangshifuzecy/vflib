@@ -1,0 +1,61 @@
+GET http://127.0.0.1:5000/users
+
+###
+GET http://127.0.0.1:5000/users/8209
+# id 8209, position: student
+
+###
+PUT http://127.0.0.1:5000/users/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nickname": "j2ee",
+  "username": "张三",
+  "position": "student",
+  "sex": "男",
+  "addr": "北京市朝阳区",
+  "phone": "1381234567",
+  "balance": 1000.0
+}
+
+###
+POST http://127.0.0.1:5000/users
+Content-Type: application/json
+
+{
+  "nickname": "abc",
+  "username": "张三",
+  "position": "student",
+  "sex": "男",
+  "addr": "北京市朝阳区",
+  "phone": "138123456",
+  "balance": 1000.0
+}
+
+###
+//返回学生jwt
+POST http://127.0.0.1:5000/users/login
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODIwOSwicm9sZSI6InRlYWNoZXIifQ.fCLAfP3iw8tlNF9CLY_fNBXSkND9Tym4C5ePCf7y23g
+Content-Type: application/json
+
+
+{
+  "id": 8209,
+  "pwd": "j2ee"
+}
+###
+//返回admin jwt
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODI4OCwicm9sZSI6ImFkbWluIn0.c90W0-3Po4WLlFQE8aQCFyrsmap-ZYmij2iODR6wfvc
+POST http://127.0.0.1:5000/users/login
+Content-Type: application/json
+
+
+{
+  "id": 8288,
+  "pwd": "admin"
+}
+
+###
+DELETE 127.0.0.1:5000/users/8296
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODI4OCwicm9sZSI6ImFkbWluIn0.c90W0-3Po4WLlFQE8aQCFyrsmap-ZYmij2iODR6wfvc
